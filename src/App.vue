@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <!-- Sidebar -->
-        <v-navigation-drawer app fixed v-model="drawer">
+        <v-navigation-drawer app fixed v-model="drawer" width="250" mobile-break-point="980" touchless hide-overlay>
             <!-- Header of Sidebar -->
             <v-toolbar style="background: #42b983">
                 <v-list>
@@ -11,7 +11,7 @@
                             <v-icon class="m-title">favorite</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content>
-                            <v-list-tile-title class="m-title">Project Vui Vẻ</v-list-tile-title>
+                            <v-list-tile-title class="m-title">Sắp Xếp</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list>
@@ -38,7 +38,7 @@
         <v-toolbar fixed app style="background: #42b983">
             <v-toolbar-side-icon @click.stop="drawer = !drawer" class="m-title"></v-toolbar-side-icon>
             <v-toolbar-title style="width: 100%; margin-left: -33.91px">
-                <p class="text-xs-center ma-0 m-title">Sắp xếp</p>
+                <p class="text-xs-center ma-0 m-title">Project Vui Vẻ</p>
             </v-toolbar-title>
         </v-toolbar>
         <!-- End Header -->
@@ -73,7 +73,7 @@ export default {
     router,
     data() {
         return { 
-            drawer: true,
+            drawer: window.innerWidth >= 980,
             items: [
                 {title: 'Sắp xếp chọn', href: '/sapxep/selection-sort'},
                 {title: 'Sắp xếp chèn', href: '/sapxep/insertion-sort'},
