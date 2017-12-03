@@ -5,8 +5,8 @@ body{
     background: white;
 }
 
-h4, label{
-    color: #666 !important;
+h3, h4, label{
+    color: #444;
     font-weight: lighter;
 }
 
@@ -36,7 +36,7 @@ a:hover{
     left: 0;
     .level{
         font-weight: bold;
-        color: $green-vue;
+        color: $green-vue !important;
     }
     h4{
         font-size: 16px;
