@@ -1,10 +1,6 @@
 $green-vue: #42b983;
 $border-grey: #d3e0e9;
 
-h1, h2, h3, h4{
-    color: #888;
-}
-
 body{
     background: white;
 }
@@ -31,7 +27,7 @@ a:hover{
     padding-right: 20px;
     background: white;
     border-right: 1px solid $border-grey;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.4s;
     left: 0;
     .level{
         font-weight: bold;
