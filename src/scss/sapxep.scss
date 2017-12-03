@@ -152,6 +152,9 @@ a:hover{
         z-index: 1031;
         //left: -50%;
     }
+    .open{
+        box-shadow: 2px 2px 20px 0px $green-vue;
+    }
     .navbar{
         text-align: center;
         .my-title{
@@ -178,7 +181,6 @@ a:hover{
 .open{
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
-    box-shadow: 2px 2px 20px 0px $green-vue;
 }
 
 
