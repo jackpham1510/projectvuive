@@ -31,8 +31,7 @@ a:hover{
     padding-right: 20px;
     background: white;
     border-right: 1px solid $border-grey;
-    transition: all 0.25s;
-    left: 0;
+    transition: all 0.2s;
     .level{
         font-weight: bold;
         color: $green-vue !important;
