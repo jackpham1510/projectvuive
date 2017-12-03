@@ -51,13 +51,13 @@
                    style="margin-right: 10px; margin-left: 0">
         </h4>
         
-        <v-btn style="background: #42b983; color: white" @click="newArray()">New Array</v-btn>
+        <button type="button" class="btn btn-success" @click="newArray()">New Array</button>
         <hr>
         <h4>Original Array: </h4>
         <div class="step">
-            <v-btn v-for="(a, index) in arr" 
+            <span v-for="(a, index) in arr" 
                 class="arr"
-                :key="index">{{ a }}</v-btn>
+                :key="index">{{ a }}</span>
         </div>
         <h4 v-if="end"><input type="checkbox" v-model="showRsOnly"> Show wrong step only</h4>
         <template v-if="start">
@@ -68,23 +68,23 @@
                             <!-- <span style="margin-left: 5px">j: <input type="number" min="0" :max="arrs.length - 1"></span>-->
                         </h4>
                         <div v-show="!showRsOnly">
-                            <v-btn v-for="(a, j) in arrs" 
+                            <span v-for="(a, j) in arrs" 
                                     class="arr"
                                     :class="{ 'selected' :  selected[i][j]}"
                                     :key="j"  
-                                    @click.prevent="selectArray(i, j)">{{ a }}</v-btn>
-                            <v-btn style="min-width: 50px" color="error" @click="newStep(i)">OK</v-btn>
+                                    @click.prevent="selectArray(i, j)">{{ a }}</span>
+                            <a class="arr selected" @click="newStep(i)">OK</a>
                             <span class="glyphicon" :class="{ 'glyphicon-remove' : trueFalse[i] == false}"></span>
                             <span class="glyphicon" :class="{ 'glyphicon-ok' : trueFalse[i] == true}"></span>
                         </div>
                         
                         <template v-if="end && i < sort.length && !trueFalse[i]">
                                 <div>
-                                    <v-btn v-for="(a, j) in arrSort[i]" 
+                                    <span v-for="(a, j) in arrSort[i]" 
                                         class="arr-rs"
                                         :class="{ 'sort' :  (sort[i].i == j || sort[i].j == j)}"
                                         :key="j"  
-                                        @click.prevent="selectArray(i, j)">{{ a }}</v-btn>
+                                        @click.prevent="selectArray(i, j)">{{ a }}</span>
                                 </div>       
                         </template>
                     </div>
@@ -102,14 +102,14 @@
                             <span v-for="(a, j) in arrs" :key="j" style="white-space: nowrap;">
                                 <span :class="tab[j]"></span>
                                 <span :class="space[j]"></span>
-                                <v-btn  class="arr tree"
+                                <span  class="arr tree"
                                         :class="{ 'selected' :  selected[i][j]}"
-                                        @click.prevent="selectArray(i, j)">{{ a }}</v-btn>
+                                        @click.prevent="selectArray(i, j)">{{ a }}</span>
                                 <br v-show="endl[j]"/>
                             </span>
                             <br>
                             
-                            <v-btn style="min-width: 50px" color="error" @click="newStep(i)" style="margin-top: 10px">OK</v-btn>  
+                            <span class="arr selected" @click="newStep(i)" style="margin-top: 10px">OK</span>  
                         </div>
                         
                         <template v-if="end && i < sort.length && !trueFalse[i]">
@@ -117,16 +117,16 @@
                                     <span v-for="(a, j) in arrSort[i]" :key="j" style="white-space: nowrap;">
                                         <span :class="tab[j]"></span>
                                         <span :class="space[j]"></span>
-                                        <v-btn  class="arr-rs tree"
+                                        <span  class="arr-rs tree"
                                                 :class="{ 'sort' :  (sort[i].i == j || sort[i].j == j)}"
-                                                @click.prevent="selectArray(i, j)">{{ a }}</v-btn>
+                                                @click.prevent="selectArray(i, j)">{{ a }}</span>
                                         <br v-show="endl[j]"/>
                                     </span>
                                 </div>       
                         </template>
                     </div>
                 </template>    
-                <v-btn color="error" style="margin: 20px 0" @click="onSubmit()">Submit</v-btn>
+                <button type="button" class="btn btn-danger selected" style="margin: 20px 0" @click="onSubmit()">Submit</button>
         </template>
         
     </div>

@@ -1,9 +1,7 @@
 <template>
   <div id="sapxep">
     <sort-header @click="sideBar = !sideBar"></sort-header>
-    <transition name="slide-left">
-        <sort-sidebar @click="sideBar = !sideBar" v-show="showSideBar"></sort-sidebar>
-    </transition>    
+    <sort-sidebar @click="sideBar = !sideBar" :class="{'open' : showSideBar}"></sort-sidebar> 
     <router-view class="my-content" @click="sideBar = sideBar && false"></router-view>   
   </div>
 </template>

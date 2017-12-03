@@ -1,89 +1,184 @@
 $green-vue: #42b983;
 $border-grey: #d3e0e9;
 
+h1, h2, h3, h4{
+    color: #888;
+}
+
 body{
-    color: white;
+    background: white;
 }
 
 a{
     text-decoration: none !important;
+    color: inherit;
+}
+
+a:hover{
+    color: white;
+}
+
+.btn-success{
+    background: $green-vue !important;
+}
+
+.sidebar{
+    width: 230px;
+    height: 100%;
+    position: fixed;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 20px;
+    background: white;
+    border-right: 1px solid $border-grey;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0, 1);
+    left: 0;
+    .level{
+        font-weight: bold;
+        color: $green-vue;
+    }
+    h4{
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    a:hover{
+        border-bottom: 2px solid $green-vue;
+        font-weight: bold;
+        color: inherit;
+    }
+}
+
+.router-link-active{
+    border-bottom: 2px solid $green-vue;
+}
+
+.router-link-active:focus{
+    color: inherit;
+}
+
+.my-content{
+    padding-top: 72px;
+    padding-left: 250px;
+    padding-right: 20px;
+    label{
+        font-weight: lighter;
+    }
+    input[type="number"]{
+        width: 50px;
+        margin-left: 10px;
+    }
 }
 
 .arr{
-    width: 40px;
-    min-width: 40px !important;
+    padding: 5px 15px;
     margin-right: 10px;
     margin-bottom: 10px;
-    background: $green-vue !important;
-    font-family: sans-serif;
-    color: white !important;
+    display: inline-block;
+    background: $green-vue;
     border-radius: 10px;
+    font-family: sans-serif;
+    color: white;
+    cursor: pointer;
 }
 
 .arr-rs{
-    width: 40px;
-    min-width: 40px !important;
+    padding: 5px 15px;
     margin-right: 10px;
     margin-bottom: 10px;
-    background: #4285F4 !important;
-    font-family: sans-serif;
-    color: white !important;
+    display: inline-block;
+    background: #4285F4;
     border-radius: 10px;
+    font-family: sans-serif;
+    color: white;
+    cursor: pointer; 
+}
+
+@media screen and (min-width: 900px){
+    .arr-rs:hover{
+        background: rgb(50, 98, 175);
+    }
+    
+    .arr:hover{
+        background: #20895e;
+    }
+
+    .selected:hover{
+        background: rgb(170, 56, 53);
+    }
+    
+    .sort:hover{
+        background: rgb(228, 146, 31);
+    }
 }
 
 .selected, {
-    background: #DC4C46 !important;
+    background: #DC4C46;
 }
 
 .sort{
-    background: #FF9900 !important;
+    background: #FF9900;
 }
 
 .step{
     margin-bottom: 20px;
-}
-
-.slide-left-enter, .slide-left-leave-to{
-    left: -50% !important;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .glyphicon-remove{
-    color: #DC4C46;
+    font-size: 20px;
+    color: #DC4C46; 
 }
 
 .glyphicon-ok{
-    color: #42b983;
+    font-size: 20px;
+    color: $green-vue;
 }
 
-input[type="text"], input[type="number"]{
-    background: white !important;
-    border: 1px solid #42b983 !important;
-    width: 50px;
-    height: 30px;
-    padding-left: 5px;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+@media screen and (max-width: 1000px) {
+    .sidebar{
+        padding-left: 27px;
+    }
+    .navbar{
+        padding: 0 27px !important;
+    }
 }
 
-input[disabled]{
-    cursor: not-allowed !important;
+@media screen and (max-width: 900px) {
+    .sidebar{
+        transform: translate(-230px, 0);
+        -webkit-transform: translate(-230px, 0);
+        padding-top: 0px;
+        z-index: 1031;
+        //left: -50%;
+    }
+    .navbar{
+        text-align: center;
+        .my-title{
+            padding-right: 30px !important;
+        }
+        .menu-button{
+            display: initial !important;
+        }
+    }
+    .my-content{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding-left: 27px;
+        padding-right: 27px;
+        z-index: -1;
+    }
+    // .home{
+    //     padding-left: 27px;
+    //     padding-right: 27px;
+    // }
 }
 
-input[name="max"]{
-    margin-left: 7px;
-}
-
-h1,h2,h3,h4,h5,h6{
-    color: #666;
-    font-weight: lighter;
-}
-
-label{
-    font-weight: lighter !important;
-    color: #666;
-}
-
-.btn__content:before{
-    position: relative !important;
+.open{
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 20px 0px $green-vue;
 }
 
 

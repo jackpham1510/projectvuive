@@ -22,38 +22,38 @@
                    style="margin-right: 10px; margin-left: 0">
         </h4>
         
-        <v-btn style="background: #42b983; color: white" @click="newArray()">New Array</v-btn>
+        <button type="button" class="btn btn-success" @click="newArray()">New Array</button>
         <hr>
         <h4>Original Array: </h4>
         <template v-if="start">
                 <div class="step">
-                    <v-btn v-for="(a, index) in arr" 
+                    <span v-for="(a, index) in arr" 
                         class="arr"
-                        :key="index">{{ a }}</v-btn>
+                        :key="index">{{ a }}</span>
                 </div>
                 <h4 v-if="end"><input type="checkbox" v-model="showRsOnly"> Show wrong step only</h4>
                 <div v-for="(arrs, i) in myStep" :key="i" class="step">
                     <div v-show="!showRsOnly">
                         <h4>
                             <span>left:
-                                <input v-model.number="lrArr[i].l" :disabled="end" type="number" min="0" :max="arrs.length - 1" style="text-align: center">
+                                <input v-model.number="lrArr[i].l" type="number" min="0" :max="arrs.length - 1" style="text-align: center">
                             </span>
                             <span style="margin-left: 5px">right: 
-                                <input v-model.number="lrArr[i].r" :disabled="end" type="number" min="0" :max="arrs.length - 1" style="text-align: center">
+                                <input v-model.number="lrArr[i].r" type="number" min="0" :max="arrs.length - 1" style="text-align: center">
                             </span>
                             <br v-if="xEndl">
                             <br v-if="xEndl">
                             <span :style="{marginLeft : (xEndl ? 2 : 5) + 'px'}">x:
                                 <span style="margin-left: 7px">a[</span>
-                                <input v-model.number="xArr[i]" :disabled="end" type="number" min="0" :max="arrs.length - 1" style="text-align: center; margin-left: 0;"> ]
+                                <input v-model.number="xArr[i]" type="number" min="0" :max="arrs.length - 1" style="text-align: center; margin-left: 0;"> ]
                             </span>
                         </h4>
-                        <v-btn v-for="(a, j) in arrs" 
+                        <span v-for="(a, j) in arrs" 
                                 class="arr"
                                 :class="[{ 'sort' :  stack[i][0] == j}, {'selected' : stack[i][1] == j}]"
                                 :key="j"  
-                                @click.prevent="selectArray(i, j)">{{ a }}</v-btn>
-                        <v-btn style="min-width: 50px" color="error" @click="newStep(i)">OK</v-btn>
+                                @click.prevent="selectArray(i, j)">{{ a }}</span>
+                        <a class="arr selected" @click="newStep(i)">OK</a>
                         <span class="glyphicon" :class="{ 'glyphicon-remove' : trueFalse[i] == false}"></span>
                         <span class="glyphicon" :class="{ 'glyphicon-ok' : trueFalse[i] == true}"></span>
                     </div>
@@ -73,15 +73,15 @@
                                     <input :value="xArrSort[i]" type="number"style="text-align: center; margin-left: 0;" disabled> ]
                                 </span>
                             </h4>
-                            <v-btn v-for="(a, j) in arrSort[i]" 
+                            <span v-for="(a, j) in arrSort[i]" 
                                   class="arr-rs"
                                   :class="[{ 'sort' :  (sort[i].i == j)}, {'selected' : (sort[i].j == j)}]"
                                   :key="j"  
-                                  @click.prevent="selectArray(i, j)">{{ a }}</v-btn>
+                                  @click.prevent="selectArray(i, j)">{{ a }}</span>
                             <span style="font-size: 16px;">(i: {{ sort[i].i }}, j: {{sort[i].j}})</span>
                     </template>
                 </div>
-                <v-btn color="error" style="margin: 20px 0" @click="onSubmit()">Submit</v-btn>
+                <button type="button" class="btn btn-danger selected" style="margin: 20px 0" @click="onSubmit()">Submit</button>
         </template>
         
     </div>

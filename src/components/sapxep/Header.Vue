@@ -14,12 +14,13 @@
         height: 60px;
         line-height: 60px;
         padding: 0 40px;
+        background: #fff;
         .my-title{    
             height: 60px;  
             padding: 0;
             padding-right: 15px;
             color: $green-vue;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
         }
         .menu-button{

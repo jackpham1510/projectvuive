@@ -10,7 +10,7 @@
 </style>
 
 <template>   
-    <div class="home">
+    <div class="home" @click="$emit('click')">
         <h1>Hello!</h1>
         <h4>Please choose sorting algorithm you want to play in side bar</h4>
         <hr>

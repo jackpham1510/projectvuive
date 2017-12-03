@@ -29,14 +29,14 @@
                    style="margin-right: 10px; margin-left: 0">
         </h4>
         
-        <v-btn style="background: #42b983; color: white" @click="newArray()">New Array</v-btn>
+        <button type="button" class="btn btn-success" @click="newArray()">New Array</button>
         <hr>
         <h4>Original Array:</h4>
         <template v-if="start">
                 <div class="step" style="white-space: nowrap;">
-                    <v-btn v-for="(a, index) in arr" 
+                    <span v-for="(a, index) in arr" 
                         class="arr"
-                        :key="index">{{ a }}</v-btn>
+                        :key="index">{{ a }}</span>
                 </div>
 
                 <h4 v-if="end"><input type="checkbox" v-model="showRsOnly"> Show wrong step only</h4>
@@ -48,26 +48,26 @@
                         <span v-for="(a, j) in arrs" 
                                 :key="j"  
                                 @click.prevent="selectArray(i, j)">
-                                <v-btn class="arr" :class="{ 'selected' :  selected[i][j]}">{{ a }}</v-btn><span class="divide" v-show="divide[i][j]"></span>
+                                <span class="arr" :class="{ 'selected' :  selected[i][j]}">{{ a }}</span><span class="divide" v-show="divide[i][j]"></span>
                         </span>
                         <span class="glyphicon" :class="{ 'glyphicon-remove' : trueFalse[i] == false}"></span>
                         <span class="glyphicon" :class="{ 'glyphicon-ok' : trueFalse[i] == true}"></span>
                         <br>
-                        <v-btn style="min-width: 50px" color="error" @click="swap(i)">SWAP</v-btn>
-                        <v-btn style="min-width: 50px" color="error" @click="newStep(i)">OK</v-btn>
+                        <a class="arr selected" @click="swap(i)">SWAP</a>
+                        <a class="arr selected" @click="newStep(i)">OK</a>
                     </div>
                     
                     <template v-if="end && !trueFalse[i]">
                             <div>
                                 <span v-for="(a, j) in arrSort[i]"   
                                     :key="j">
-                                    <v-btn class="arr-rs">{{ a }}</v-btn><span class="divide" v-show="divideSort(i, j)"></span>
+                                    <span class="arr-rs">{{ a }}</span><span class="divide" v-show="divideSort(i, j)"></span>
                                 </span>
                             </div>
                             
                     </template>
                 </div>
-                <v-btn color="error" style="margin: 20px 0" @click="onSubmit()">Submit</v-btn>
+                <button type="button" class="btn btn-danger selected" style="margin: 20px 0" @click="onSubmit()">Submit</button>
         </template>
         
     </div>
