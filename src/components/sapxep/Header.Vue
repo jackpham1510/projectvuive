@@ -20,7 +20,7 @@
             padding: 0;
             padding-right: 15px;
             color: $green-vue;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
         .menu-button{
