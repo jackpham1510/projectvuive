@@ -55,10 +55,10 @@
                     <template v-if="end && i < sort.length && !trueFalse[i]">
                             <h4>
                                 <span>i:
-                                    <input :value="ijArrSort[i].i" type="number"style="text-align: center" disabled>
+                                    <input :value="ijArrSort[i].i" type="number" style="text-align: center" disabled>
                                 </span>
                                 <span style="margin-left: 5px">j: 
-                                    <input :value="ijArrSort[i].j" type="number"style="text-align: center" disabled>
+                                    <input :value="ijArrSort[i].j" type="number" style="text-align: center" disabled>
                                 </span>
                             </h4>
                             <span v-for="(a, j) in arrSort[i]" 

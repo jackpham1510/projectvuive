@@ -61,16 +61,16 @@
                     <template v-if="end && i < sort.length && !trueFalse[i]">
                             <h4>
                                 <span>left:
-                                    <input :value="lrArrSort[i].l" type="number"style="text-align: center" disabled>
+                                    <input :value="lrArrSort[i].l" type="number" style="text-align: center" disabled>
                                 </span>
                                 <span style="margin-left: 5px">right: 
-                                    <input :value="lrArrSort[i].r" type="number"style="text-align: center" disabled>
+                                    <input :value="lrArrSort[i].r" type="number" style="text-align: center" disabled>
                                 </span>
                                 <br v-if="xEndl">
                                 <br v-if="xEndl">
                                 <span :style="{marginLeft : (xEndl ? 2 : 5) + 'px'}">x:
                                     <span style="margin-left: 7px">a[</span>
-                                    <input :value="xArrSort[i]" type="number"style="text-align: center; margin-left: 0;" disabled> ]
+                                    <input :value="xArrSort[i]" type="number" style="text-align: center; margin-left: 0;" disabled> ]
                                 </span>
                             </h4>
                             <span v-for="(a, j) in arrSort[i]" 
