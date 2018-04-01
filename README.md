@@ -18,6 +18,8 @@ npm run start or yarn start
 
 Open another cmd, terminal or something...
 ```bash
+cd projectvuive
+
 # serve with hot reload at localhost:8080
 npm run dev
 
@@ -25,6 +27,6 @@ npm run dev
 npm run build
 ```
 ## Build With
-[Vue](https://vuejs.org/) - for Front-End
-[Vue-router](https://router.vuejs.org/en/) - for Routing
-[Express](https://expressjs.com/) - for Back-End
+* [Vue](https://vuejs.org/) - for Front-End
+* [Vue-router](https://router.vuejs.org/en/) - for Routing
+* [Express](https://expressjs.com/) - for Back-End
